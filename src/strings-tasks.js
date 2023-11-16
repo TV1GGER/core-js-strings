@@ -277,17 +277,16 @@ function endsWith(str, substr) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  // let minutesForm = minutes;
-  // let secondsForm = seconds;
-  // if (minutesForm < 10) {
-  //   minutesForm = `0${minutesForm}`;
-  // }
-  // if (secondsForm < 10) {
-  //   secondsForm = `0${secondsForm}`;
-  // }
-  // return `${minutesForm}:${secondsForm}`;
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  let minutesForm = minutes.toString();
+  let secondsForm = seconds.toString();
+  if (minutes < 10) {
+    minutesForm = minutesForm.padStart(2, '0');
+  }
+  if (seconds < 10) {
+    secondsForm = secondsForm.padStart(2, '0');
+  }
+  return `${minutesForm}:${secondsForm}`;
 }
 
 /**
